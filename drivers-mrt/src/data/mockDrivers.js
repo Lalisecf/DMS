@@ -1,0 +1,23 @@
+export const mockDrivers = [
+    { id: 1, name: 'Lalise Fufi', status: 'Active', location: 'Addis Ababa', hireDate: '2025-09-04' },
+    { id: 2, name: 'Sara Tesfaye', status: 'Inactive', location: 'Dire Dawa', hireDate: '2023-05-23' },
+    { id: 3, name: 'John Doe', status: 'Active', location: 'Adama', hireDate: '2025-01-11' },
+    { id: 4, name: 'Marta Yared', status: 'Active', location: 'Hawassa', hireDate: '2021-10-05' },
+    { id: 5, name: 'Alex Johnson', status: 'Active', location: 'Addis Ababa', hireDate: '2024-03-15' },
+    { id: 6, name: 'Maria Rodriguez', status: 'Inactive', location: 'Dire Dawa', hireDate: '2022-11-30' },
+    { id: 7, name: 'Daniel Bekele', status: 'Active', location: 'Adama', hireDate: '2025-06-21' },
+    { id: 8, name: 'Helen Abraham', status: 'Inactive', location: 'Addis Ababa', hireDate: '2021-12-10' },
+    { id: 9, name: 'Samuel Alemu', status: 'Active', location: 'Mekelle', hireDate: '2023-09-02' },
+    { id: 10, name: 'Ruth Kassa', status: 'Active', location: 'Hawassa', hireDate: '2022-05-18' },
+    { id: 11, name: 'Joseph Mengistu', status: 'Inactive', location: 'Addis Ababa', hireDate: '2020-08-09' },
+    { id: 12, name: 'Aster Tesfahun', status: 'Active', location: 'Gondar', hireDate: '2024-02-14' },
+    { id: 13, name: 'Michael Habtamu', status: 'Active', location: 'Adama', hireDate: '2025-04-01' },
+    { id: 14, name: 'Selamawit Desta', status: 'Inactive', location: 'Hawassa', hireDate: '2022-10-25' },
+    { id: 15, name: 'Elias Tadesse', status: 'Active', location: 'Addis Ababa', hireDate: '2023-01-30' },
+    { id: 16, name: 'Betty Fekadu', status: 'Active', location: 'Dire Dawa', hireDate: '2024-06-08' },
+    { id: 17, name: 'Tesfaye Hailu', status: 'Inactive', location: 'Mekelle', hireDate: '2021-03-22' },
+    { id: 18, name: 'Mulugeta Girma', status: 'Active', location: 'Gondar', hireDate: '2025-02-11' },
+    { id: 19, name: 'Hana Getachew', status: 'Active', location: 'Addis Ababa', hireDate: '2023-08-19' },
+    { id: 20, name: 'Abel Tewolde', status: 'Inactive', location: 'Adama', hireDate: '2020-11-05' },
+  ];
+  

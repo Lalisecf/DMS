@@ -1,0 +1,113 @@
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+  en: {
+    translation: {
+      "page.title": "Drivers Management",
+      "page.back": "Back",
+      "page.reload": "Reload",
+      "page.filters.title": "Filters",
+      "page.filters.apply": "Apply",
+      "page.filters.clear": "Clear",
+      "page.export.csv": "CSV",
+      "page.export.xlsx": "Excel",
+      "page.export.pdf": "PDF",
+      "page.export.qb": "QuickBooks",
+      "page.export.fmcsa": "FMCSA",
+      "page.source.mock": "Mock Data",
+      "page.source.api": "Live API",
+      "empty.noRows": "No drivers match your filters",
+      "col.id": "ID",
+      "col.name": "Name",
+      "col.status": "Status",
+      "col.location": "Location",
+      "col.hireDate": "Hire Date",
+      "filter.status.label": "Status",
+      "filter.status.active": "Active",
+      "filter.status.inactive": "Inactive",
+      "filter.location.label": "Location or Name",
+      "filter.dateRange.label": "Hire Date Range",
+      "filter.dateRange.preset.last7": "Last 7 Days",
+      "filter.dateRange.preset.last30": "Last 30 Days",
+      "filter.dateRange.preset.quarter": "This Quarter",
+      "filter.dateRange.preset.lastNYears": "Last {{n}} Years",
+      "export.pdf.title": "Drivers Report",
+      "export.fmcsa.title": "FMCSA Driver Roster",
+    }
+  },
+
+  om: {
+    translation: {
+      "page.title": "Bulchiinsa Ogeessota Konkolaataa",
+      "page.back": "Deebi'ii",
+      "page.reload": "Haaraa",
+      "page.filters.title": "Filannoowwan",
+      "page.filters.apply": "Fayyadami",
+      "page.filters.clear": "Haquu",
+      "page.export.csv": "CSV",
+      "page.export.xlsx": "Excel",
+      "page.export.pdf": "PDF",
+      "page.export.qb": "QuickBooks",
+      "page.export.fmcsa": "FMCSA",
+      "page.source.mock": "Daataa Fakkii",
+      "page.source.api": "API Jiraataa",
+      "empty.noRows": "Ogeessotni konkolaataa filannoo keessan waliin hin walfakkaatan",
+      "col.id": "ID",
+      "col.name": "Maqaa",
+      "col.status": "Haala",
+      "col.location": "Iddoo",
+      "col.hireDate": "Guyyaa Hojjetame",
+      "filter.status.label": "Haala",
+      "filter.status.active": "Hojjetaa",
+      "filter.status.inactive": "Hojjetaa Hinjirre",
+      "filter.location.label": "Iddoo yookiin Maqaa",
+      "filter.dateRange.label": "Gabaasa Guyyaa Hojjetame",
+      "filter.dateRange.preset.last7": "Guyyaa 7 darban",
+      "filter.dateRange.preset.last30": "Guyyaa 30 darban",
+      "filter.dateRange.preset.quarter": "Kwartara kana",
+      "filter.dateRange.preset.lastNYears": "Waggaa {{n}} darban",
+    }
+  },
+  am: {
+    translation: {
+      "page.title": "የአሸከረካራዎች አስተዳደር",
+      "page.back": "ተመለስ",
+      "page.reload": "አዲስ አድርግ",
+      "page.filters.title": "ማጣሪያዎች",
+      "page.filters.apply": "ተግባር",
+      "page.filters.clear": "አጥፋ",
+      "page.export.csv": "CSV",
+      "page.export.xlsx": "Excel",
+      "page.export.pdf": "PDF",
+      "page.export.qb": "QuickBooks",
+      "page.export.fmcsa": "FMCSA",
+      "page.source.mock": "የተፈጥሮ ዳታ",
+      "page.source.api": "አካባቢ API",
+      "empty.noRows": "ከማጣሪያዎችዎ ጋር የሚስማማ ነዋሪ የለም",
+      "col.id": "መታወቂያ",
+      "col.name": "ስም",
+      "col.status": "ሁኔታ",
+      "col.location": "ቦታ",
+      "col.hireDate": "የቀጠለበት ቀን",
+      "filter.status.label": "ሁኔታ",
+      "filter.status.active": "ንቁ",
+      "filter.status.inactive": "አልነበረም",
+      "filter.location.label": "ቦታ ወይም ስም",
+      "filter.dateRange.label": "የቀጠለበት የቀን ማስተካከያ",
+      "filter.dateRange.preset.last7": "የመጨረሻው 7 ቀናት",
+      "filter.dateRange.preset.last30": "የመጨረሻው 30 ቀናት",
+      "filter.dateRange.preset.quarter": "ይህ ሩብ",
+      "filter.dateRange.preset.lastNYears": "የመጨረሻ {{n}} ዓመታት",
+    }
+  }
+};
+
+i18next.use(initReactI18next).init({
+  resources,
+  lng: 'en',
+  fallbackLng: 'en',
+  interpolation: { escapeValue: false },
+});
+
+export default i18next;
