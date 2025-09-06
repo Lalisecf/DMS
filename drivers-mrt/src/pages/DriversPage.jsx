@@ -119,43 +119,47 @@ export default function DriversPage({ config: incoming = {} }) {
         </div>
       </div>
 
-      {/* Title */}
+   
       <h1 className="title">{t(merged.titleKey)}</h1>
 
-      {/* Layout */}
+  
       <div className="layout">
-        {/* Filters (always visible) */}
+        {}
         <aside className="filters">
           <Filters config={merged} values={filters} setValues={setFilters} onApply={(v) => setFilters(v)}
             onClear={() => setFilters({ status: '', location: '', hireDate: { start: '', end: '' } })} />
         </aside>
 
-        {/* Table */}
+  
         <main className="table-area">
-          <div className="table-header">
-            <h2>{t('Driver list')}</h2>
-            <div className="export-buttons">
-              {exportButtons.map((exp, idx) => (
-                <button key={idx} onClick={() => exp.fn(filtered, cols, merged.export.fileBaseName)}>
-                  <Download size={14} /> {exp.label}
-                </button>
-              ))}
-            </div>
-          </div>
+  <div className="table-header">
+    <h2>{t('Driver list')}</h2>
+    <div className="export-buttons">
+      {exportButtons.map((exp, idx) => (
+        <button key={idx} onClick={() => exp.fn(filtered, cols, merged.export.fileBaseName)}>
+          <Download size={14} /> {exp.label}
+        </button>
+      ))}
+    </div>
+  </div>
 
-          {/* Scrollable table */}
-          <div className="table-wrapper scrollable">
-            <MaterialReactTable
-              columns={cols}
-              data={filtered}
-              enableSorting={merged.table.sorting}
-              state={{ showProgressBars: loading, isLoading: loading }}
-              enableExpanding
-            />
-          </div>
+  <MaterialReactTable
+    columns={cols}
+    data={filtered}
+    enableSorting={merged.table.sorting}
+    enableColumnResizing
+    enableExpanding
+    stickyHeader
+    muiTableContainerProps={{
+      sx: { maxHeight: 600, overflowY: 'auto' },
+    }}
+    state={{ showProgressBars: loading, isLoading: loading }}
+  />
 
-          {!filtered.length && !loading && <div className="empty">{t('empty.noRows')}</div>}
-        </main>
+  {!filtered.length && !loading && <div className="empty">{t('empty.noRows')}</div>}
+</main>
+
+
       </div>
     </div>
   );

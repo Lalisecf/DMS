@@ -1,8 +1,12 @@
+
 .page {
     max-width: 100%;
     padding: 1rem;
+    background-color: #f5f5f5;
+    color: #222;
   }
   
+
   .header {
     display: flex;
     flex-wrap: wrap;
@@ -20,6 +24,11 @@
     cursor: pointer;
   }
   
+  .header button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
   .badge {
     background: #d9f0ff;
     color: #0056b3;
@@ -27,13 +36,14 @@
     border-radius: 6px;
     font-size: 0.85rem;
   }
-  
+
   .title {
     margin: 1rem 0;
     font-size: 1.4rem;
     color: #0056b3;
   }
   
+
   .layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -46,19 +56,23 @@
     }
   }
   
+
   .filters {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
+    min-width: 100%;
   }
   
+
   .table-area {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
     overflow-x: auto;
+    min-width: 100%;
   }
   
   .table-header {
@@ -80,12 +94,30 @@
     border-radius: 6px;
     background: #f8f9fa;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
   
-  .table-wrapper {
-    overflow-x: auto; 
+
+  .table-wrapper.scrollable {
+    width: 100%;
+    height: 600px;    
+    overflow-y: auto;
+  }
+  .material-react-table thead th {
+    background-color: #fff; 
+    z-index: 10;
   }
   
+  body.dark-mode .material-react-table thead th {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  
+  
+
   .empty {
     text-align: center;
     padding: 2rem;
@@ -93,6 +125,7 @@
     font-style: italic;
   }
   
+
   .spin {
     animation: spin 1s linear infinite;
   }
@@ -102,13 +135,60 @@
     to { transform: rotate(360deg); }
   }
   
-
+ 
   @media (max-width: 768px) {
     .layout {
       grid-template-columns: 1fr;
     }
-    .filters, .table-area {
+  
+    .filters,
+    .table-area {
       min-width: 100%;
     }
+  
+    .header button,
+    .header select {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.5rem;
+    }
+  
+    .export-buttons button {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  
+
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .page {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .header button,
+  body.dark-mode .header select,
+  body.dark-mode .export-buttons button {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+  
+  body.dark-mode .badge {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  body.dark-mode .filters,
+  body.dark-mode .table-area {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+  }
+  
+  body.dark-mode .empty {
+    color: #aaa;
   }
   
