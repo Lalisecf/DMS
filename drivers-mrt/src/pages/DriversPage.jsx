@@ -133,7 +133,7 @@ export default function DriversPage({ config: incoming = {} }) {
         {/* Table */}
         <main className="table-area">
           <div className="table-header">
-            <h2>{t('table.title')}</h2>
+            <h2>{t('Driver list')}</h2>
             <div className="export-buttons">
               {exportButtons.map((exp, idx) => (
                 <button key={idx} onClick={() => exp.fn(filtered, cols, merged.export.fileBaseName)}>
