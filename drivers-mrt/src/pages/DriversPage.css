@@ -1,0 +1,114 @@
+.page {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .header button,
+  .header select {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .badge {
+    background: #d9f0ff;
+    color: #0056b3;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  
+  .title {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: #0056b3;
+  }
+  
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 992px) {
+    .layout {
+      grid-template-columns: 300px 1fr;
+    }
+  }
+  
+  .filters {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .table-area {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .export-buttons button {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f8f9fa;
+    cursor: pointer;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto; 
+  }
+  
+  .empty {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    font-style: italic;
+  }
+  
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .filters, .table-area {
+      min-width: 100%;
+    }
+  }
+  

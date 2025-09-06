@@ -7,7 +7,10 @@ import { useTranslation } from 'react-i18next';
 export function Filters({ config, values, setValues, onApply, onClear }) {
   const { t } = useTranslation();
   const local = useRef({ ...values });
-  useEffect(() => { local.current = { ...values }; }, [values]);
+
+  useEffect(() => {
+    local.current = { ...values };
+  }, [values]);
 
   const onText = (id, v, debounce = 0) => {
     if (debounce) {
@@ -29,38 +32,39 @@ export function Filters({ config, values, setValues, onApply, onClear }) {
           <strong className="text-lg">{t('page.filters.title')}</strong>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Filters side by side */}
+        <div className="flex flex-wrap gap-4">
           {config.filters.map(f => {
-
-
             if (f.type === 'select') {
               const val = values[f.id] || '';
               return (
-                <div key={f.id} className="space-y-2">
+                <div key={f.id} className="flex-1 min-w-[150px]">
                   <label className="block text-sm font-medium">{t(f.labelKey)}</label>
                   <select
                     value={val}
                     onChange={e => onSelect(f.id, e.target.value)}
                     className="w-full p-2 border rounded-md bg-white shadow-sm hover:border-gray-400 transition"
                   >
-                     {f.options.map(o => (
+                    {f.options.map(o => (
                       <option key={o.value} value={o.value}>
                         {o.value === '' ? 'All' : t(o.labelKey)}
                       </option>
                     ))}
                   </select>
-
-
                 </div>
               );
             }
-            
 
             if (f.type === 'text') {
               return (
-                <div key={f.id} className="space-y-2">
+                <div key={f.id} className="flex-1 min-w-[150px]">
                   <label className="block text-sm font-medium">{t(f.labelKey)}</label>
-                  <input value={values[f.id] || ''} onChange={e => onText(f.id, e.target.value, f.debounceMs || 0)} className="w-full p-2 border rounded-md" placeholder={t(f.labelKey)} />
+                  <input
+                    value={values[f.id] || ''}
+                    onChange={e => onText(f.id, e.target.value, f.debounceMs || 0)}
+                    className="w-full p-2 border rounded-md"
+                    placeholder={t(f.labelKey)}
+                  />
                 </div>
               );
             }
@@ -68,10 +72,14 @@ export function Filters({ config, values, setValues, onApply, onClear }) {
             if (f.type === 'dateRange') {
               const v = values[f.id] || {};
               return (
-                <div key={f.id} className="space-y-2">
+                <div key={f.id} className="flex-1 min-w-[200px]">
                   <label className="block text-sm font-medium">{t(f.labelKey)}</label>
                   <DateRangePicker value={v} onChange={range => onDate(f.id, range)} presets={f.presets} />
-                  {v.start && v.end && <div className="text-xs">Selected: {v.start} to {v.end}</div>}
+                  {v.start && v.end && (
+                    <div className="text-xs mt-1">
+                      Selected: {v.start} to {v.end}
+                    </div>
+                  )}
                 </div>
               );
             }
@@ -80,9 +88,12 @@ export function Filters({ config, values, setValues, onApply, onClear }) {
           })}
         </div>
 
-        <div className="mt-6 flex gap-2">
+        {/* Apply / Clear buttons inline */}
+        <div className="mt-4 flex flex-wrap gap-2 justify-start">
           <Button onClick={() => onApply(values)}>{t('page.filters.apply')}</Button>
-          <Button variant="secondary" onClick={onClear}>{t('page.filters.clear')}</Button>
+          <Button variant="secondary" onClick={onClear}>
+            {t('page.filters.clear')}
+          </Button>
         </div>
       </CardContent>
     </Card>
